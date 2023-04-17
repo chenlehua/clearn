@@ -1,0 +1,3 @@
+add_executable(racecondition racecondition.c)
+
+target_link_libraries(racecondition pthread)
