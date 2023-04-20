@@ -18,14 +18,14 @@ int main(void) {
 #ifndef __STDC_NO_THREADS__
     int ids[THREAD_COUNT];
     thrd_t threads[THREAD_COUNT];
-    for (int i =0;i<THREAD_COUNT;i++){
-        ids[i]=i+1;
-        thrd_create(&threads[i],run,ids+i);
+    for (int i = 0; i < THREAD_COUNT; i++) {
+        ids[i] = i + 1;
+        thrd_create(&threads[i], run, ids + i);
     }
 
-    for(int i=0;i<THREAD_COUNT;i++)
-        thrd_join(threads[i],NULL);
-    printf("Counter value is: %d.\n",counter);
+    for (int i = 0; i < THREAD_COUNT; i++)
+        thrd_join(threads[i], NULL);
+    printf("Counter value is: %ld.\n", counter);
 
 #endif
     return 0;
